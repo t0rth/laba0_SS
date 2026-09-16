@@ -34,6 +34,7 @@ namespace laba0_SS
             Scene.Children.Add(line);
         }
         Triangle tr;
+        Rectangle rc;
         Random rnd = new Random();
         public MainWindow()
         {
@@ -42,7 +43,9 @@ namespace laba0_SS
             Point2D p1 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
             Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
             Point2D p3 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p4 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
             tr = new Triangle(p1, p2, p3);
+            rc = new Rectangle(p1, p2, p3, p4);
         }
         public void DrawTriangle(Triangle tr)
         {
@@ -50,6 +53,14 @@ namespace laba0_SS
             DrawLine(tr.P1, tr.P2);
             DrawLine(tr.P2, tr.P3);
             DrawLine(tr.P3, tr.P1);
+        }
+        public void DrawRectangle(Rectangle rc)
+        {
+            //Отрисовка треугольника с помощью функции отрисовки линии
+            DrawLine(rc.P1, rc.P2);
+            DrawLine(rc.P2, rc.P3);
+            DrawLine(rc.P3, rc.P4);
+            DrawLine(rc.P4, rc.P1);
         }
         public void ClearScene()
         {
@@ -67,6 +78,19 @@ namespace laba0_SS
 
             Triangle tr = new Triangle(p1, p2, p3);
             DrawTriangle(tr);
+        }
+        private void BtnRectangle_Click(object sender, RoutedEventArgs e)
+        {
+            ClearScene();   // стираем старое
+
+            Random rnd = new Random();
+            Point2D p1 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p3 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p4 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+
+            Rectangle rc = new Rectangle(p1, p2, p3, p4);
+            DrawRectangle(rc);
         }
     }
 }

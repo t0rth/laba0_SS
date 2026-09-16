@@ -5,6 +5,11 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "laba0_SS", "laba0_SS\laba0_SS.csproj", "{C9E33501-BD91-431C-A7C2-5E8D3A7217D0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{154754A5-08CE-4D3A-B5BC-F499F9DACD07}"
+	ProjectSection(SolutionItems) = preProject
+		Rectangle.cs = Rectangle.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
