@@ -37,6 +37,7 @@ namespace laba0_SS
         Random rnd = new Random();
         public MainWindow()
         {
+            InitializeComponent();
             //Создание треугольника со случайными координатами
             Point2D p1 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
             Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
@@ -54,6 +55,18 @@ namespace laba0_SS
         {
             //Очистка Canvas от всех объектов
             Scene.Children.Clear();
+        }
+        private void BtnTriangle_Click(object sender, RoutedEventArgs e)
+        {
+            ClearScene();   // стираем старое
+
+            Random rnd = new Random();
+            Point2D p1 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p3 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+
+            Triangle tr = new Triangle(p1, p2, p3);
+            DrawTriangle(tr);
         }
     }
 }
