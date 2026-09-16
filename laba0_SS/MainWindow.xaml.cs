@@ -50,5 +50,10 @@ namespace laba0_SS
             DrawLine(tr.P2, tr.P3);
             DrawLine(tr.P3, tr.P1);
         }
+        public void ClearScene()
+        {
+            //Очистка Canvas от всех объектов
+            Scene.Children.Clear();
+        }
     }
 }
