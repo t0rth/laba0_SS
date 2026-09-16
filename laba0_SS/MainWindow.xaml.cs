@@ -43,5 +43,12 @@ namespace laba0_SS
             Point2D p3 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
             tr = new Triangle(p1, p2, p3);
         }
+        public void DrawTriangle(Triangle tr)
+        {
+            //Отрисовка треугольника с помощью функции отрисовки линии
+            DrawLine(tr.P1, tr.P2);
+            DrawLine(tr.P2, tr.P3);
+            DrawLine(tr.P3, tr.P1);
+        }
     }
 }
